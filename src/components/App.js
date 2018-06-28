@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import '../styles/index.css';
 import {Form, FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
 import MemeItem from './MemeItem';
+import MyMeme from './MyMeme';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -16,6 +17,7 @@ class App extends React.Component {
     return(
       <div>
         <h2><u>Welcome to the Meme Generator!</u></h2>
+        <MyMeme />
         <h4><i>Write Some Text</i></h4>
         <Form inline>
           <FormGroup>
@@ -32,7 +34,7 @@ class App extends React.Component {
             <ControlLabel>Bottom</ControlLabel>
             {' '}
             <FormControl
-              type="text" 
+              type="text"
               onChange={e => this.setState({text1: e.target.value})}
               ></FormControl>
           </FormGroup>
@@ -40,7 +42,10 @@ class App extends React.Component {
         {
           this.props.memes.slice(0,this.state.memeLimit).map((meme, index)=>{
             return(
-              <MemeItem key={index} meme={meme} />
+              <MemeItem key={index} meme={meme}
+                text0={this.state.text0}
+                text1={this.state.text1}
+               />
             )
           })
         }
