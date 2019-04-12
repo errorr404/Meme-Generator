@@ -17,8 +17,7 @@ then after that it will generate a Cool meme for you.
 ## POST meme
 ## https://api.imgflip.com/caption_image
 
-## Must Install:-
-- npm install redux --save
-- npm install react-redux --save
-- npm install react-bootstrap --save
-- npm install redux-thunk --save
+## Run the project
+
+- npm install
+- npm start
